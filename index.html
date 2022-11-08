@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
+    <title>Document</title>
+<style>
+        input {
+    color: black;
+    position: absolute;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+}
+body {
+    background-image: url(https://media.istockphoto.com/id/964442494/vector/honeycomb-seamless-background-vector-illustration.jpg?s=612x612&w=0&k=20&c=ggWu0khwZUX0fr5A0URs706YhuW8lMGdffmrbSmGrX8=);
+    text-align: center;
+    font-family:'Open Sans', sans-serif;
+     }
+</style>
+</head>
+<body>
+    
+<h1>Catch the BEE !!</h1>
+<h2>If you manage to click on the bee, a victory message will appear.</h2>
+    
+<input class="btn" type="image" onclick="prize()" src="https://pngimg.com/uploads/bee/bee_PNG74690.png">
+<script>
+
+
+        let btn = document.querySelector('.btn')
+
+        document.addEventListener('DOMContentLoaded', () => {
+            btn.addEventListener('mousemove', BeeP)
+        })
+        
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            btn.addEventListener('onclick', prize)
+        })
+
+        function prize() {
+            alert("You win!!!")
+        }
+
+        function BeeP(e) {
+           let x = e.clientX
+           let y = e.clientY
+           if ( x > 0 && y > 0) {
+            btn.style.top = Math.floor((Math.random() * 550) + 1) + "px";
+            btn.style.left = Math.floor((Math.random() * 1200) + 1) + "px";
+           }
+        }
+</script>
+</body>
+</html>
